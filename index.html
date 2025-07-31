@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Sitio Profesional</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #fff;
+    }
+
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: bold;
+      color: red;
+      font-size: 22px;
+      img{
+        height: 60px;
+
+      }
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav li {
+      margin-left: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px 60px;
+      background-color: #f7f8fd;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      font-size: 18px;
+      color: #555;
+    }
+
+    .hero .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .hero .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background-color: #f98f1d;
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background-color: #5865f2;
+      color: #fff;
+    }
+
+    .info-section {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #ffffff;
+    }
+
+    .info-section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .info-blocks {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .block {
+      width: 250px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #f2f4f8;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+
+    .block h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .block p {
+      font-size: 15px;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .info-blocks {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <div class="logo"><img src="https://vanacco.com/wp-content/uploads/2020/06/Form-1.jpg">kevinShop</div>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#ofertas">Ofertas</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <h1>¡Crea Formularios Profesionales en Minutos!</h1>
+    <p>Ofrecemos herramientas para crear formularios que ahorran tiempo, automatizan procesos y se adaptan a tus necesidades.</p>
+    <div class="buttons">
+      <a href="#" class="btn btn-primary">Comenzar Gratis</a>
+      <a href="#" class="btn btn-secondary">Ver Más</a>
+    </div>
+  </section>
+
+  <section class="info-section" id="ofertas">
+    <h1>¿Por qué lo usamos?
+        Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo).</h1>
+        <div class="info-blocks">
+            <div class="block">
+                <h3>Sobre Nosotros</h3>
+                <p>Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto.</p>
+            </div>
+        </div>
+  </section>
+
+  <section class="info-section" id="servicios">
+    <h2>¿Qué Ofrecemos?</h2>
+    <div class="info-blocks">
+      <div class="block">
+        <h3>Formularios Inteligentes</h3>
+        <p>Condiciones lógicas, personalización total y flujos de trabajo automatizados.</p>
+      </div>
+      <div class="block">
+        <h3>Integraciones</h3>
+        <p>Conecta con Google Sheets, Dropbox, Slack, y más para mejorar tu productividad.</p>
+      </div>
+      <div class="block">
+        <h3>Diseño Adaptable</h3>
+        <p>Compatible con cualquier dispositivo: PC, tablet o móvil.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section" id="contacto">
+    <h2>Contáctanos</h2>
+    <p>¿Tienes dudas o quieres una demostración? Escríbenos y te responderemos pronto.</p>
+  </section>
+
+</body>
+</html>
