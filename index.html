@@ -4,47 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demons Slayer</title>
-  <link rel="icono" href="images/logo.png">
+<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRWmmUx_kYi2ZKqDdrNqUlFlm7WH8kS-j6YQETXHVkWjiQ0TN2Hi1xAI3eKHTRfg0GYUY&usqp=CAU" type="imagen">
   <style>
     header {
-      background-color: red;
-      box-shadow: 0 2px 5px #000;
-      padding: 15px 30px;
-      position: sticky;
-      top: 0;
-      z-index: 999;
+    background-color: red;
+    box-shadow: 0 2px 5px #000;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+  }
+  .logo img {
+    height: 60px;
+    margin-right: 10px;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  nav li {
+    margin-left: 20px;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px #000;
+    background-color: white;
+    padding: 5px;
+    border: 2px solid black;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    margin-left: 10px;
+    &:hover {
+      box-shadow: 0 0 10px #000;
+      transform: scale(1.1);
     }
-    .nav-container{
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo{
-      font-weight: bold;
-      color: black;
-      font-size: 22px;
-      align-items: center;
-      display: flex;
-      img{
-        height: 60px;
-      }
-    }
-    nav ul{
-      list-style: none;
-      display: flex;
-    }
-    nav li{
-      margin-left: 20px;
-      border: 12px solid transparent;
-      border-bottom: 2px solid black;
-      padding: 10px;
-    }
-    nav a{
-      text-decoration: none;
-      color: black;
-      font-weight: bold
-    }
+  }
+  nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+
+  .inicio {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: 5px solid red;
+    text-align: center;
+  }
+
+  section[id] {
+    scroll-margin-top: 100px; 
+  }
   </style>
 </head>
 <body>
@@ -59,9 +89,32 @@
           <li><a href="#temporadas">Temporadas</a></li>
         </ul>
       </nav>
-    </div>
-    
-    </div>
-  </header>
+    </div>   
+  </div>
+</header>
+  <section id="inicio" class="inicio">
+    <h2>Inicio</h2>
+     <p><strong>Demon Slayer: Kimetsu no Yaiba</strong> es una de las series de anime más exitosas y queridas de los últimos años. Con una animación impresionante, batallas emocionantes y una historia llena de sentimientos, esta obra ha conquistado a millones de fanáticos en todo el mundo.</p>
+
+    <p>La historia gira en torno a <strong>Tanjiro Kamado</strong>, un joven amable que vive en las montañas con su familia. Todo cambia cuando, al regresar a casa, descubre que su familia ha sido asesinada por demonios y que su hermana menor, <strong>Nezuko</strong>, ha sido convertida en uno de ellos. A partir de ese momento, Tanjiro decide convertirse en cazador de demonios para vengar a su familia y encontrar la manera de devolverle la humanidad a su hermana.</p>
+
+    <p>Con una mezcla de acción intensa, drama emocional y personajes profundos, Demon Slayer te invita a un viaje inolvidable a través de un mundo oscuro, peligroso y fascinante. Esta página está dedicada a contarte todo sobre esta increíble historia: sus personajes, temporadas, batallas y mucho más. ¡Bienvenido al universo de Demon Slayer!</p>
+  </section>
+  <section id="descripcion" class="descripcion"></section>
+    <h2>Descripción</h2>
+      <p><strong>Kimetsu no Yaiba</strong> (título original en japonés) fue creado por <strong>Koyoharu Gotouge</strong> y comenzó como un manga en 2016. Gracias a su éxito, fue adaptado al anime por el estudio Ufotable en 2019, y desde entonces no ha parado de crecer en popularidad.</p>
+
+      <p>La serie se sitúa en el Japón de la era Taisho, donde los demonios acechan en la oscuridad y cazan humanos para alimentarse. Estos seres malvados fueron humanos alguna vez, pero han sido transformados por el rey de los demonios: <strong>Muzan Kibutsuji</strong>. Para combatirlos, existe una organización secreta conocida como el <strong>Cuerpo de Cazadores de Demonios</strong>, formada por guerreros expertos que dominan técnicas especiales de respiración y combate con espadas nichirin, capaces de destruir demonios.</p>
+
+      <p>Tanjiro, con la firme esperanza de salvar a su hermana y detener al mal, se une a esta organización. En su viaje, conocerá a aliados como <strong>Zenitsu Agatsuma</strong> y <strong>Inosuke Hashibira</strong>, y se enfrentará a enemigos temibles que pondrán a prueba su voluntad y su corazón.</p>
+
+      <p>Más que una serie de acción, Demon Slayer es una historia sobre el amor fraternal, la lucha contra la adversidad y el deseo de proteger a los seres queridos. Cada episodio está cargado de emoción, tensión y un mensaje profundo sobre la vida y la esperanza. No es solo una batalla entre el bien y el mal, es una historia de humanidad.</p>
+</section>
+  <section class="personajes">
+    <h2>Personajes</h2>
+  </section>
+  <section class="temporadas">
+    <h2>Temporadas</h2>
+  </section>
 </body>
 </html>
