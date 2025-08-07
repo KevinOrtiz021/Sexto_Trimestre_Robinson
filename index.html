@@ -9,17 +9,22 @@
 </head>
 <body>
   <header>
-    <div class="nav-container">
-      <div  class="logo"><img src="images/logo.png">Demons Slayer</div>
-      <nav>
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#descripcion">Descripcion</a></li>
-          <li><a href="#personajes">Personajes</a></li>
-          <li><a href="#temporadas">Temporadas</a></li>
-        </ul>
-      </nav>
-    </div>   
+  <div class="nav-container">
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo">
+      Demons Slayer
+    </div>
+
+    <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">☰</a>
+
+    <nav>
+      <ul class="nav-menu" id="menu">
+        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+        <li><a href="#descripcion" class="nav-link">Descripción</a></li>
+        <li><a href="#personajes" class="nav-link">Personajes</a></li>
+        <li><a href="#temporadas" class="nav-link">Temporadas</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
   <section id="inicio" class="inicio">
@@ -264,5 +269,21 @@
     </div>
   </div>
 </section>
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+  }
+  const links = document.querySelectorAll(".nav-link");
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      links.forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
+      const menu = document.getElementById("menu");
+      if (menu.classList.contains("active")) {
+        menu.classList.remove("active");
+      }
+    });
+  });
+</script>
 </body>
 </html>
