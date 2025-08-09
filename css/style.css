@@ -1,0 +1,888 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+nav a:hover {
+    transform: scale(1.1);
+}
+
+nav svg {
+    width: 30px;
+    height: 30px;
+    fill: #ffffff;
+    transition: fill 0.3s ease;
+}
+
+nav a:hover svg {
+    fill: #4CAF50;
+}
+/* Variables CSS globales */
+:root {
+    /* Colores Robin */
+    --robin-primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --robin-secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --robin-accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --robin-dark-bg: #0f0f23;
+    --robin-card-bg: rgba(255, 255, 255, 0.1);
+    --robin-text-primary: #ffffff;
+    --robin-text-secondary: rgba(255, 255, 255, 0.8);
+    --robin-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    
+    /* Colores ADSO */
+    --adso-primary-color: #1e40af;
+    --adso-secondary-color: #3b82f6;
+    --adso-accent-color: #06b6d4;
+    --adso-success-color: #10b981;
+    --adso-warning-color: #f59e0b;
+    --adso-danger-color: #ef4444;
+    --adso-dark-bg: #0f172a;
+    --adso-card-bg: rgba(30, 41, 59, 0.8);
+    --adso-glass-bg: rgba(255, 255, 255, 0.1);
+    --adso-text-primary: #f1f5f9;
+    --adso-text-secondary: #cbd5e1;
+    --adso-text-accent: #38bdf8;
+    --adso-gradient-primary: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #06b6d4 100%);
+    --adso-gradient-secondary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+    --adso-gradient-accent: linear-gradient(135deg, #06b6d4 0%, #0891b2 50%, #0e7490 100%);
+    
+    /* Variables compartidas */
+    --border-radius: 16px;
+    --border-radius-lg: 24px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* ==============================
+   ESTILOS PARA ROBIN (body.Robin)
+   ============================== */
+
+/* Configuración del body para Robin */
+body.Robin {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--robin-dark-bg);
+    color: var(--robin-text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Fondo animado con partículas para Robin */
+body.Robin::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+    z-index: -1;
+    animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-20px) rotate(1deg); }
+    66% { transform: translateY(10px) rotate(-1deg); }
+}
+
+/* Container principal para Robin */
+body.Robin main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header para Robin */
+body.Robin header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 3rem 2rem;
+    background: var(--robin-card-bg);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--robin-shadow);
+    position: relative;
+    overflow: hidden;
+    animation: slideInDown 0.8s ease-out;
+}
+
+body.Robin header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: var(--robin-primary-gradient);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    50%, 100% { left: 100%; }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body.Robin header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: var(--robin-primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    letter-spacing: -2px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.3));
+    }
+    to {
+        filter: drop-shadow(0 0 30px rgba(102, 126, 234, 0.6));
+    }
+}
+
+body.Robin header img {
+    width: 120px;
+    height: 120px;
+    margin: 1.5rem auto;
+    display: block;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    animation: rotate 10s linear infinite, pulse 2s ease-in-out infinite;
+    transition: var(--transition);
+}
+
+body.Robin header img:hover {
+    transform: scale(1.1);
+    border-color: rgba(102, 126, 234, 0.5);
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7); }
+    50% { box-shadow: 0 0 0 20px rgba(102, 126, 234, 0); }
+}
+
+body.Robin header p {
+    font-size: 1.3rem;
+    color: var(--robin-text-secondary);
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Menú para Robin */
+body.Robin menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+body.Robin menu a {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    background: var(--robin-card-bg);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    color: var(--robin-text-primary);
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: slideInUp 0.8s ease-out backwards;
+}
+
+body.Robin menu a:nth-child(1) { animation-delay: 0.1s; }
+body.Robin menu a:nth-child(2) { animation-delay: 0.2s; }
+body.Robin menu a:nth-child(3) { animation-delay: 0.3s; }
+body.Robin menu a:nth-child(4) { animation-delay: 0.4s; }
+body.Robin menu a:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body.Robin menu a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: var(--transition);
+}
+
+body.Robin menu a:hover::before {
+    left: 100%;
+    transition: left 0.5s;
+}
+
+body.Robin menu a:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(102, 126, 234, 0.5);
+}
+
+body.Robin menu a:nth-child(1):hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+}
+
+body.Robin menu a:nth-child(2):hover {
+    background: linear-gradient(135deg, rgba(240, 147, 251, 0.2), rgba(245, 87, 108, 0.2));
+}
+
+body.Robin menu a:nth-child(3):hover {
+    background: linear-gradient(135deg, rgba(79, 172, 254, 0.2), rgba(0, 242, 254, 0.2));
+}
+
+body.Robin menu a:nth-child(4):hover {
+    background: linear-gradient(135deg, rgba(255, 154, 158, 0.2), rgba(250, 208, 196, 0.2));
+}
+
+body.Robin menu a:nth-child(5):hover {
+    background: linear-gradient(135deg, rgba(161, 196, 253, 0.2), rgba(194, 233, 251, 0.2));
+}
+
+body.Robin menu a span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: var(--robin-primary-gradient);
+    border-radius: 50%;
+    margin-right: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+}
+
+body.Robin menu a:hover span {
+    transform: rotate(360deg) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.Robin menu a:nth-child(2) span {
+    background: var(--robin-secondary-gradient);
+}
+
+body.Robin menu a:nth-child(3) span {
+    background: var(--robin-accent-gradient);
+}
+
+body.Robin menu a:nth-child(4) span {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+}
+
+body.Robin menu a:nth-child(5) span {
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+/* ==============================
+   ESTILOS PARA ADSO (body.main-menu)
+   ============================== */
+
+/* Configuración del body para ADSO */
+body.main-menu {
+    font-family: 'Poppins', sans-serif;
+    background: var(--adso-dark-bg);
+    color: var(--adso-text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    line-height: 1.6;
+}
+
+/* Fondo con patrón geométrico animado para ADSO */
+body.main-menu::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 25% 25%, rgba(30, 64, 175, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    z-index: -2;
+}
+
+/* Patrón de puntos para ADSO */
+body.main-menu::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+    background-size: 40px 40px;
+    z-index: -1;
+    animation: moveBackground 20s linear infinite;
+}
+
+@keyframes moveBackground {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(40px, 40px); }
+}
+
+/* Container principal para ADSO */
+body.main-menu main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Header para ADSO */
+body.main-menu header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 4rem 3rem;
+    background: var(--adso-glass-bg);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    overflow: hidden;
+    animation: slideInScale 1s ease-out;
+    max-width: 800px;
+    width: 100%;
+}
+
+body.main-menu header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--adso-gradient-primary);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+body.main-menu header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
+    animation: shine 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes slideInScale {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes shine {
+    0%, 100% { transform: translateX(-100%) rotate(45deg); }
+    50% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Título principal ADSO */
+body.main-menu header h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: var(--adso-gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+    position: relative;
+    display: inline-block;
+}
+
+body.main-menu header h1 span {
+    display: inline-block;
+    font-size: 2.5rem;
+    background: var(--adso-gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: bounce 2s ease-in-out infinite;
+    margin-left: 0.2rem;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Subtítulo para ADSO */
+body.main-menu header h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--adso-text-accent);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Imagen de perfil para ADSO */
+body.main-menu header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    background: var(--adso-gradient-primary);
+    padding: 4px;
+    margin: 2rem auto;
+    display: block;
+    object-fit: cover;
+    transition: var(--transition);
+    animation: fadeInScale 1s ease-out 0.6s forwards, profilePulse 3s ease-in-out 1.6s infinite;
+    opacity: 0;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes profilePulse {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+    }
+    50% { 
+        transform: scale(1.05);
+        box-shadow: 0 0 0 20px rgba(59, 130, 246, 0);
+    }
+}
+
+body.main-menu header img:hover {
+    transform: scale(1.1) rotate(5deg);
+    filter: brightness(1.1);
+}
+
+/* Nombre del estudiante para ADSO */
+body.main-menu header h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--adso-text-secondary);
+    margin-top: 1rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.9s forwards;
+    position: relative;
+}
+
+body.main-menu header h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--adso-gradient-accent);
+    border-radius: 2px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 1.2s forwards;
+}
+
+/* Menú para ADSO */
+body.main-menu menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 800px;
+}
+
+body.main-menu menu a {
+    display: flex;
+    align-items: center;
+    padding: 2.5rem 2rem;
+    background: var(--adso-glass-bg);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    color: var(--adso-text-primary);
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    animation: slideInFromBottom 1s ease-out 1.5s backwards;
+    cursor: pointer;
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body.main-menu menu a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: var(--transition-slow);
+}
+
+body.main-menu menu a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--adso-gradient-primary);
+    opacity: 0;
+    transition: var(--transition);
+    z-index: -1;
+}
+
+body.main-menu menu a:hover::before {
+    left: 100%;
+}
+
+body.main-menu menu a:hover::after {
+    opacity: 0.1;
+}
+
+body.main-menu menu a:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+    border-color: rgba(59, 130, 246, 0.5);
+    color: var(--adso-text-primary);
+}
+
+body.main-menu menu a span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background: var(--adso-gradient-primary);
+    border-radius: 50%;
+    margin-right: 2rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+body.main-menu menu a span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: var(--transition);
+}
+
+body.main-menu menu a:hover span {
+    transform: rotate(360deg) scale(1.1);
+    box-shadow: var(--shadow-lg);
+}
+
+body.main-menu menu a:hover span::before {
+    transform: translateX(100%);
+}
+
+/* Efectos de carga progresiva para ADSO */
+body.main-menu menu a {
+    opacity: 0;
+    animation: fadeInSlideUp 0.6s ease-out forwards;
+}
+
+body.main-menu menu a:nth-child(1) { animation-delay: 0.2s; }
+body.main-menu menu a:nth-child(2) { animation-delay: 0.4s; }
+body.main-menu menu a:nth-child(3) { animation-delay: 0.6s; }
+body.main-menu menu a:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==============================
+   RESPONSIVE DESIGN UNIFICADO
+   ============================== */
+
+@media (max-width: 1024px) {
+    body.Robin main,
+    body.main-menu main {
+        padding: 1.5rem;
+    }
+    
+    body.Robin header,
+    body.main-menu header {
+        padding: 3rem 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    body.Robin header h1,
+    body.main-menu header h1 {
+        font-size: 3rem;
+    }
+    
+    body.Robin menu,
+    body.main-menu menu {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    body.main-menu menu {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    body.Robin main {
+        padding: 1rem;
+    }
+    
+    body.main-menu main {
+        padding: 1rem;
+        justify-content: flex-start;
+        padding-top: 2rem;
+    }
+    
+    body.Robin header {
+        padding: 2rem 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    body.main-menu header {
+        padding: 2.5rem 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    body.Robin header h1,
+    body.main-menu header h1 {
+        font-size: 2.5rem;
+    }
+    
+    body.main-menu header h1 span {
+        font-size: 2rem;
+    }
+    
+    body.main-menu header h2 {
+        font-size: 1.5rem;
+    }
+    
+    body.Robin header img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    body.main-menu header img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    body.main-menu header h3 {
+        font-size: 1.3rem;
+    }
+    
+    body.Robin menu {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    body.Robin menu a {
+        padding: 1.5rem;
+        font-size: 1.2rem;
+    }
+    
+    body.main-menu menu a {
+        padding: 2rem 1.5rem;
+        font-size: 1.2rem;
+    }
+    
+    body.Robin menu a span {
+        width: 50px;
+        height: 50px;
+        margin-right: 1rem;
+        font-size: 1rem;
+    }
+    
+    body.main-menu menu a span {
+        width: 60px;
+        height: 60px;
+        margin-right: 1.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body.Robin header h1,
+    body.main-menu header h1 {
+        font-size: 2rem;
+    }
+    
+    body.main-menu header h1 span {
+        font-size: 1.5rem;
+    }
+    
+    body.Robin header p,
+    body.main-menu header h2 {
+        font-size: 1.1rem;
+    }
+    
+    body.main-menu header h2 {
+        font-size: 1.3rem;
+    }
+    
+    body.main-menu header {
+        padding: 2rem 1rem;
+    }
+    
+    body.main-menu header img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    body.Robin menu a,
+    body.main-menu menu a {
+        padding: 1.2rem;
+        font-size: 1.1rem;
+    }
+    
+    body.main-menu menu a {
+        padding: 1.5rem 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    body.main-menu menu a span {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+    }
+}

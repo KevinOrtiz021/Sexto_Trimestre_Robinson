@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #F2F2F2;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        form{
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 320px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h2{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label{
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select{
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button{
+            margin-top: 15px;
+            padding: 10px;
+            width: 100%;
+            background-color: #4caf50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form id="formulario">
+        <h2>formulario</h2>
+
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre">
+
+        <label for="apellido">apellido</label>
+        <input type="text" id="apellido">
+
+        <label for="correo">Correo</label>
+        <input type="email" id="correo">
+
+        <label for="fecha">fecha de nacimiento</label>
+        <input type="date" id="fecha">
+
+        <label for="tipoDoc">Tipo de documento</label>
+        <select id="tipoDoc">
+            <option value="">Seleccione</option>
+            <option value="CC">Cedula</option>
+            <option value="TI">Tarjeta de identidad</option>
+            <option value="OTro">Otro</option>
+        </select>
+
+        <label for="documento">Numero de documento</label>
+        <input type="number" id="documento">
+
+        <label for="telefono">Telefono</label>
+        <input type="tel" id="telefono">
+
+        <label for="direccion">Dirección</label>
+        <input type="text" id="direccion">
+
+        <button type="button" onclick="validarFormulario()">Validar</button>
+    </form>
+    <script>
+        function validarFormulario(){
+            let nombre = document.getElementById("nombre").value.trim();
+        }
+    </script>
+</body>
+</html>
