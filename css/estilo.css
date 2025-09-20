@@ -1,0 +1,114 @@
+/* 🎨 ESTILO GENERAL */
+body.Robin {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 🔙 NAV (Botón Home) */
+.Robin nav {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 10px;
+  border-radius: 50%;
+  backdrop-filter: blur(6px);
+  transition: background 0.3s ease, transform 0.2s ease;
+  z-index: 1000;
+}
+
+.Robin nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Robin nav:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* 🏷️ ENCABEZADO */
+.Robin main {
+  max-width: 900px;
+  margin: 100px auto 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.Robin header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: #ffcc00;
+  letter-spacing: 2px;
+}
+
+.Robin header img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 20px 0;
+  border: 4px solid #fff;
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+}
+
+.Robin header p {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+}
+
+/* 📑 MENÚ */
+.Robin menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+  padding: 0;
+  list-style: none;
+}
+
+.Robin menu a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 15px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.Robin menu a span {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #ffcc00;
+}
+
+.Robin menu a:hover {
+  transform: translateY(-8px) scale(1.05);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 600px) {
+  .Robin header h1 {
+    font-size: 2rem;
+  }
+
+  .Robin menu {
+    grid-template-columns: 1fr;
+  }
+}
