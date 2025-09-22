@@ -86,11 +86,15 @@
     </form>
     <?php
     if (isset($_POST['numero'])) {
-        $numero = $_POST['numero'];
-        if ($numero % 2 == 0) {
-            echo "El numero es par";
+        $numero = intval($_POST['numero']);
+        if ($numero >= 2) {
+            echo "<h3>Números pares del 1 al $numero:</h3><ul>";
+            for ($i = 2; $i <= $numero; $i += 2) {
+                echo "<li>$i</li>";
+            }
+            echo "</ul>";
         } else {
-            echo "El numero es impar";
+            echo "<h3>No hay números pares en ese rango.</h3>";
         }
     }
     ?>
